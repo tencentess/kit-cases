@@ -1,0 +1,1605 @@
+{
+	"info": {
+		"_postman_id": "6b655847-d258-450f-a02a-afc8d68b6a0a",
+		"name": "ess-kit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "文件发起",
+			"item": [
+				{
+					"name": "UploadFiles",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "UploadFiles"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Caller\": {\n        \"OperatorId\": \"{{OperatorUserId}}\"\n    },\n\n  \"BusinessType\": \"DOCUMENT\",\n  \"FileInfos\": [\n    {\n      \"FileBody\": \"JVBERi0xLjcNCiW1tbW1DQoxIDAgb2JqDQo8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFIvTGFuZyh6aC1DTikgL1N0cnVjdFRyZWVSb290IDEwIDAgUi9NYXJrSW5mbzw8L01hcmtlZCB0cnVlPj4vTWV0YWRhdGEgMjEgMCBSL1ZpZXdlclByZWZlcmVuY2VzIDIyIDAgUj4+DQplbmRvYmoNCjIgMCBvYmoNCjw8L1R5cGUvUGFnZXMvQ291bnQgMS9LaWRzWyAzIDAgUl0gPj4NCmVuZG9iag0KMyAwIG9iag0KPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9SZXNvdXJjZXM8PC9Gb250PDwvRjEgNSAwIFI+Pi9FeHRHU3RhdGU8PC9HUzcgNyAwIFIvR1M4IDggMCBSPj4vUHJvY1NldFsvUERGL1RleHQvSW1hZ2VCL0ltYWdlQy9JbWFnZUldID4+L01lZGlhQm94WyAwIDAgNTk1LjMyIDg0MS45Ml0gL0NvbnRlbnRzIDQgMCBSL0dyb3VwPDwvVHlwZS9Hcm91cC9TL1RyYW5zcGFyZW5jeS9DUy9EZXZpY2VSR0I+Pi9UYWJzL1MvU3RydWN0UGFyZW50cyAwPj4NCmVuZG9iag0KNCAwIG9iag0KPDwvRmlsdGVyL0ZsYXRlRGVjb2RlL0xlbmd0aCAxNDk+Pg0Kc3RyZWFtDQp4nC2MOwvCMBRG9wv3P3xjK9gktbEJlA59WBQ7SCMO4tChdjL4+P9gKp7twOFADM/RoyhEX+8bSHEc/Yxo8uvzEJclqqbGi0kmcsGYXEFCW51sUphMJTbFe2K6rOCZKsckdgpKJnoLd2daagkFGwZphlxbuEeIuiHH/AlfzD8zf+uYrhHiG9yBqQ27ExPavsYXGIwilw0KZW5kc3RyZWFtDQplbmRvYmoNCjUgMCBvYmoNCjw8L1R5cGUvRm9udC9TdWJ0eXBlL1RydWVUeXBlL05hbWUvRjEvQmFzZUZvbnQvQkNERUVFK0RlbmdYaWFuL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZy9Gb250RGVzY3JpcHRvciA2IDAgUi9GaXJzdENoYXIgMzIvTGFzdENoYXIgMzIvV2lkdGhzIDE5IDAgUj4+DQplbmRvYmoNCjYgMCBvYmoNCjw8L1R5cGUv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nr/szdR2ST+wXOpGxjv/ef/2pu1Jjp35U7o1L6dy35sV6torTrCqPN0ebftkRuglPbGZPIZ8j5bMOJt3YN1vjx3v/Mtl3Dg63Mquax3qu5FyU5/vud2r+FTTsybmi0+GxcYDIwAAi6uM1g0KZW5kc3RyZWFtDQplbmRvYmoNCjIxIDAgb2JqDQo8PC9UeXBlL01ldGFkYXRhL1N1YnR5cGUvWE1ML0xlbmd0aCAzMTA3Pj4NCnN0cmVhbQ0KPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz48eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSIzLjEtNzAxIj4KPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgIHhtbG5zOnBkZj0iaHR0cDovL25zLmFkb2JlLmNvbS9wZGYvMS4zLyI+CjxwZGY6UHJvZHVjZXI+TWljcm9zb2Z0wq4gV29yZCDpgILnlKjkuo4gTWljcm9zb2Z0IDM2NTwvcGRmOlByb2R1Y2VyPjwvcmRmOkRlc2NyaXB0aW9uPgo8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KPGRjOmNyZWF0b3I+PHJkZjpTZXE+PHJkZjpsaT5reWxpbmt6aGFuZyjlvKDlh68pPC9yZGY6bGk+PC9yZGY6U2VxPjwvZGM6Y3JlYXRvcj48L3JkZjpEZXNjcmlwdGlvbj4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+Cjx4bXA6Q3JlYXRvclRvb2w+TWljcm9zb2Z0wq4gV29yZCDpgILnlKjkuo4gTWljcm9zb2Z0IDM2NTwveG1wOkNyZWF0b3JUb29sPjx4bXA6Q3JlYXRlRGF0ZT4yMDIxLTEyLTA2VDE5OjA3OjQ3KzA4OjAwPC94bXA6Q3JlYXRlRGF0ZT48eG1wOk1vZGlmeURhdGU+MjAyMS0xMi0wNlQxOTowNzo0NyswODowMDwveG1wOk1vZGlmeURhdGU+PC9yZGY6RGVzY3JpcHRpb24+CjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyI+Cjx4bXBNTTpEb2N1bWVudElEPnV1aWQ6NTgwQjk5NDItRkIwMi00REUyLTk5QzUtQTdCRTQ3QUVBMEU5PC94bXBNTTpEb2N1bWVudElEPjx4bXBNTTpJbnN0YW5jZUlEPnV1aWQ6NTgwQjk5NDItRkIwMi00REUyLTk5QzUtQTdCRTQ3QUVBMEU5PC94bXBNTTpJbnN0YW5jZUlEPjwvcmRmOkRlc2NyaXB0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPC9yZGY6UkRGPjwveDp4bXBtZXRhPjw/eHBhY2tldCBlbmQ9InciPz4NCmVuZHN0cmVhbQ0KZW5kb2JqDQoyMiAwIG9iag0KPDwvRGlzcGxheURvY1RpdGxlIHRydWU+Pg0KZW5kb2JqDQoyMyAwIG9iag0KPDwvVHlwZS9YUmVmL1NpemUgMjMvV1sgMSA0IDJdIC9Sb290IDEgMCBSL0luZm8gOSAwIFIvSURbPDQyOTkwQjU4MDJGQkUyNEQ5OUM1QTdCRTQ3QUVBMEU5Pjw0Mjk5MEI1ODAyRkJFMjREOTlDNUE3QkU0N0FFQTBFOT5dIC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDkwPj4NCnN0cmVhbQ0KeJxjYACC//8ZgaQgAwOIWgah7oEpxjdgiuk0mGIuBlMsyRBqBoQ6C5QHahBiYIZQLBCKFUKxQSgmCMUIoaAa2IHaWX+BTWFfDKH2gSnD7WDKTpeBAQBQ0QwjDQplbmRzdHJlYW0NCmVuZG9iag0KeHJlZg0KMCAyNA0KMDAwMDAwMDAxMCA2NTUzNSBmDQowMDAwMDAwMDE3IDAwMDAwIG4NCjAwMDAwMDAxNjYgMDAwMDAgbg0KMDAwMDAwMDIyMiAwMDAwMCBuDQowMDAwMDAwNDkyIDAwMDAwIG4NCjAwMDAwMDA3MTUgMDAwMDAgbg0KMDAwMDAwMDg4MyAwMDAwMCBuDQowMDAwMDAxMTIzIDAwMDAwIG4NCjAwMDAwMDExNzYgMDAwMDAgbg0KMDAwMDAwMTIyOSAwMDAwMCBuDQowMDAwMDAwMDExIDY1NTM1IGYNCjAwMDAwMDAwMTIgNjU1MzUgZg0KMDAwMDAwMDAxMyA2NTUzNSBmDQowMDAwMDAwMDE0IDY1NTM1IGYNCjAwMDAwMDAwMTUgNjU1MzUgZg0KMDAwMDAwMDAxNiA2NTUzNSBmDQowMDAwMDAwMDE3IDY1NTM1IGYNCjAwMDAwMDAwMTggNjU1MzUgZg0KMDAwMDAwMDAwMCA2NTUzNSBmDQowMDAwMDAxOTU1IDAwMDAwIG4NCjAwMDAwMDE5ODIgMDAwMDAgbg0KMDAwMDAxMjcyNyAwMDAwMCBuDQowMDAwMDE1OTE3IDAwMDAwIG4NCjAwMDAwMTU5NjIgMDAwMDAgbg0KdHJhaWxlcg0KPDwvU2l6ZSAyNC9Sb290IDEgMCBSL0luZm8gOSAwIFIvSURbPDQyOTkwQjU4MDJGQkUyNEQ5OUM1QTdCRTQ3QUVBMEU5Pjw0Mjk5MEI1ODAyRkJFMjREOTlDNUE3QkU0N0FFQTBFOT5dID4+DQpzdGFydHhyZWYNCjE2MjUxDQolJUVPRg0KeHJlZg0KMCAwDQp0cmFpbGVyDQo8PC9TaXplIDI0L1Jvb3QgMSAwIFIvSW5mbyA5IDAgUi9JRFs8NDI5OTBCNTgwMkZCRTI0RDk5QzVBN0JFNDdBRUEwRTk+PDQyOTkwQjU4MDJGQkUyNEQ5OUM1QTdCRTQ3QUVBMEU5Pl0gL1ByZXYgMTYyNTEvWFJlZlN0bSAxNTk2Mj4+DQpzdGFydHhyZWYNCjE2ODg3DQolJUVPRg==\",\n      \"FileName\": \"我的第一个合同\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://file.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"file",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFlowByFiles",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateFlowByFiles"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n\n \n  \"FlowName\": \"我的第一个合同\",\n\n  \"FlowType\": \"other\",\n  \"Approvers\": [\n    {\n      \"ApproverType\": 1,\n      \"NotifyType\": \"sms\",\n     \"ApproverName\": \"张三\",\n      \"ApproverMobile\": \"18111222333\",\n      \"SignComponents\": [\n        {\n          \"ComponentPosX\": 146.15625,\n          \"ComponentPosY\": 472.78125,\n          \"ComponentWidth\": 112,\n          \"ComponentHeight\": 40,\n          \"FileIndex\": 0,\n          \"ComponentType\": \"SIGN_SIGNATURE\",\n          \"ComponentPage\": 1\n        }\n      ]\n    }\n  ],\n  \"FileIds\": [\n    \"yDw9jUUgyg3ucjyfUyLPc4iE5BZOhMGT\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFlowInfo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFlowInfo"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "模板发起",
+			"item": [
+				{
+					"name": "CreateFlow",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"value": "CreateFlow",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Version",
+								"value": "2020-11-11",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"value": "{{Timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Region",
+								"value": "ap-guangzhou",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n\n \n  \"FlowName\": \"我的第一个合同\",\n  \"Unordered\": false,\n  \"FlowType\": \"other\",\n  \"Approvers\": [\n    {\n      \"ApproverType\": 1,\n      \"Required\": true,\n      \"ApproverName\": \"张三\",\n      \"ApproverMobile\": \"18111222333\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateDocument",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"value": "CreateDocument",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Version",
+								"value": "2020-11-11",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"value": "{{Timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Region",
+								"value": "ap-guangzhou",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n\n  \"FileNames\": [\n    \"我的第一个合同\"\n  ],\n  \"FlowId\": \"yDw9jUUgyg34ghj0UxawbT61cKbyWFzw\",\n  \"TemplateId\": \"{{TemplateId}}\",\n  \"FormFields\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StartFlow",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "StartFlow"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"FlowId\": \"yDw9jUUgyg34ghj0UxawbT61cKbyWFzw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFlowBriefs",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"value": "DescribeFlowBriefs",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Version",
+								"value": "2020-11-11",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"value": "{{Timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Region",
+								"value": "ap-guangzhou",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDw9jUUgyg34ghj0UxawbT61cKbyWFzw\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFileUrls",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFileUrls"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"BusinessIds\": [\"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\"],\n    \"BusinessType\": \"FLOW\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "签署",
+			"item": [
+				{
+					"name": "CreateSchemeUrl",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateSchemeUrl"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"PathType\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFlowSignUrl",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateFlowSignUrl"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\",\n        \"ClientIp\":\"8.8.8.8\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverMobile\": \"xx\",\n            \"ApproverName\": \"xx\",\n            \"ApproverType\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFlowApprovers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateFlowApprovers"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"Approvers\": [\n    {\n      \"RecipientId\": \"RecipientId_1\",\n      \"ApproverSource\": \"WEWORKAPP\",\n     \"CustomUserId\": \"Zhangsan\"\n      \n    }\n  ]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFlowSignReview",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateFlowSignReview"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"ReviewType\":\"PASS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBatchCancelFlowUrl",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateBatchCancelFlowUrl"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "印章管理",
+			"item": [
+				{
+					"name": "DescribeOrganizationSeals",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeOrganizationSeals"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "模板管理",
+			"item": [
+				{
+					"name": "DescribeFlowTemplates",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFlowTemplates"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"template-id\",\n            \"Values\": [\"{{TemplateId}}\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "个人账号管理",
+			"item": [],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "企业管理",
+			"item": [
+				{
+					"name": "DescribeIntegrationEmployees",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeIntegrationEmployees"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Limit\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "证书管理",
+			"item": [
+				{
+					"name": "CreateFlowEvidenceReport",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateFlowEvidenceReport"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFlowEvidenceReport",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFlowEvidenceReport"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"ReportId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "电子文档管理",
+			"item": [
+				{
+					"name": "CreateMultiFlowSignQRCode",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateMultiFlowSignQRCode"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"TemplateId\": \"{{TemplateId}}\",\n    \"FlowName\": \"扫码签流程\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelMultiFlowSignQRCode",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CancelMultiFlowSignQRCode"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"QrCodeId\": \"yDw9kUUgyg341rl5UyLm3ikCvew6diBL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyPdf",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "VerifyPdf"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDRIKUUgyxxxxUuO4zjExhs82XeuX\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"postman.setGlobalVariable(\"Timestamp\", Date.parse(new Date()) / 1000);",
+					"postman.setGlobalVariable(\"Nonce\", Date.parse(new Date()) / 1000);",
+					"// Service = request.url.replace(/https:\\/\\//, \"\").replace(/\\.tencentcloudapi\\.com/, \"\")",
+					"Service = request.url.replace(/(http:\\/\\/)|(https:\\/\\/)/, \"\").split(\".\")[0]",
+					"",
+					"if (request.headers[\"x-tc-service\"]) {",
+					"    Service = request.headers[\"x-tc-service\"]",
+					"}",
+					"console.log(Service);",
+					"",
+					"if (request.method == \"GET\") {",
+					"    payload = \"\"",
+					"    CanonicalQueryString = \"\"",
+					"}else if(request.method == \"POST\"){",
+					"    payload = request.data",
+					"    CanonicalQueryString = \"\"",
+					"}",
+					"",
+					"var reg = /^http(s)?:\\/\\/(.*?)\\//",
+					"HashedRequestPayload = CryptoJS.SHA256(payload).toString(CryptoJS.enc.Hex);",
+					"CanonicalURI = \"/\";",
+					"HTTPRequestMethod = request.method",
+					"CanonicalHeaders = \"content-type:application/json\\nhost:\" + request.url.replace(/(http:\\/\\/)|(https:\\/\\/)/, \"\") + \"\\n\"",
+					"SignedHeaders = \"content-type;host\"",
+					"",
+					"CanonicalRequest = \"\" + ",
+					"    HTTPRequestMethod + '\\n' +",
+					"    CanonicalURI + '\\n' +",
+					"    CanonicalQueryString + '\\n' +",
+					"    CanonicalHeaders + '\\n' +",
+					"    SignedHeaders + '\\n' +",
+					"    HashedRequestPayload",
+					"  ",
+					"console.log(CanonicalRequest);",
+					"",
+					"Algorithm = \"TC3-HMAC-SHA256\";",
+					"RequestTimestamp = postman.getGlobalVariable(\"Timestamp\")",
+					"Date1 = new Date().toISOString().split('T')[0]",
+					"CredentialScope = Date1 + \"/\" + Service + \"/\" + \"tc3_request\"",
+					"HashedCanonicalRequest =  CryptoJS.SHA256(CanonicalRequest).toString(CryptoJS.enc.Hex)",
+					"",
+					"StringToSign =",
+					"    Algorithm + \"\\n\" +",
+					"    RequestTimestamp + \"\\n\" +",
+					"    CredentialScope + \"\\n\" +",
+					"    HashedCanonicalRequest",
+					"    ",
+					"console.log(StringToSign);",
+					"",
+					"// SecretKey = \"\"",
+					"SecretKey = pm.variables.get(\"SecretKey\")",
+					"SecretDate = CryptoJS.HmacSHA256(Date1, \"TC3\" + SecretKey)",
+					"// console.log(SecretDate)",
+					"SecretService = CryptoJS.HmacSHA256(Service, SecretDate)",
+					"SecretSigning = CryptoJS.HmacSHA256(\"tc3_request\", SecretService)",
+					"",
+					"Signature = CryptoJS.HmacSHA256(StringToSign, SecretSigning).toString(CryptoJS.enc.Hex)",
+					"postman.setGlobalVariable(\"Signature\", Signature);",
+					"",
+					"Authorization =",
+					"    Algorithm + ' ' +",
+					"    'Credential=' + pm.variables.get(\"SecretId\") + '/' + CredentialScope + ', ' +",
+					"    'SignedHeaders=' + SignedHeaders + ', ' + ",
+					"    'Signature=' + Signature",
+					"    ",
+					"postman.setGlobalVariable(\"Authorization\", Authorization);    ",
+					"",
+					"console.log(Authorization); "
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
