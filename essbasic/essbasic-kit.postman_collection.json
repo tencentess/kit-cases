@@ -1987,7 +1987,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"{{ProxyOperatorOpenId}}\"\n        },\n        \"ProxyOrganizationOpenId\": \"{{ProxyOrganizationOpenId}}\",\n        \"AppId\": \"{{AppId}}\"\n    },\n    \"ProxyOrganizationName\": \"渠道接入子客0001\"\n}",
+							"raw": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"{{ProxyOperatorOpenId}}\"\n        },\n        \"ProxyOrganizationOpenId\": \"{{ProxyOrganizationOpenId}}\",\n        \"AppId\": \"{{AppId}}\"\n    },\n    \"ProxyOrganizationName\": \"接入子客0001\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2052,7 +2052,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"{{ProxyOperatorOpenId}}\"\n        },\n        \"ProxyOrganizationOpenId\": \"{{ProxyOrganizationOpenId}}\",\n        \"AppId\": \"{{AppId}}\"\n    },\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"UniformSocialCreditCode\": \"xxxxxxxxxxxxxxxxxxxx\",\n    \"BusinessLicense\": \"xxxxxxxxxxxxx\",\n    \"ProxyLegalName\": \"王x\"\n}",
+							"raw": "{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"{{ProxyOperatorOpenId}}\"\n        },\n        \"ProxyOrganizationOpenId\": \"{{ProxyOrganizationOpenId}}\",\n        \"AppId\": \"{{AppId}}\"\n    },\n    \"ProxyOrganizationName\": \"子客企业名称\",\n    \"UniformSocialCreditCode\": \"xxxxxxxxxxxxxxxxxxxx\",\n    \"BusinessLicense\": \"xxxxxxxxxxxxx\",\n    \"ProxyLegalName\": \"王x\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
