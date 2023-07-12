@@ -1,13 +1,78 @@
 {
 	"info": {
-		"_postman_id": "6b655847-d258-450f-a02a-afc8d68b6a0a",
+		"_postman_id": "d5b8b4ae-3f25-42cc-b985-d850c4c92be2",
 		"name": "ess-kit",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "文件发起",
+			"name": "模板与文件相关接口",
 			"item": [
+				{
+					"name": "DescribeFlowTemplates",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFlowTemplates"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"template-id\",\n            \"Values\": [\"{{TemplateId}}\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "UploadFiles",
 					"event": [
@@ -74,6 +139,206 @@
 					"response": []
 				},
 				{
+					"name": "CreateConvertTaskApi",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateConvertTaskApi"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"ResourceType\": \"docx\",\n    \"ResourceName\": \"hello.docx\",\n    \"ResourceId\": \"yDwXXUUckp19hajvUyhrkigEAJDtRWx8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTaskResultApi",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "GetTaskResultApi"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"TaskId\": \"20230710144513718486\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFileUrls",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFileUrls"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"BusinessIds\": [\"yDwXiUUckp1ivaczUxErSZ0R6t5JVeYa\"],\n    \"BusinessType\": \"FLOW\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "创建签署流程相关接口",
+			"item": [
+				{
 					"name": "CreateFlowByFiles",
 					"event": [
 						{
@@ -139,76 +404,6 @@
 					"response": []
 				},
 				{
-					"name": "DescribeFlowInfo",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-TC-Action",
-								"type": "text",
-								"value": "DescribeFlowInfo"
-							},
-							{
-								"key": "X-TC-Version",
-								"type": "text",
-								"value": "2020-11-11"
-							},
-							{
-								"key": "X-TC-Timestamp",
-								"type": "text",
-								"value": "{{Timestamp}}"
-							},
-							{
-								"key": "X-TC-Region",
-								"type": "text",
-								"value": "ap-guangzhou"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "{{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\"\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://ess.test.ess.tencent.cn",
-							"protocol": "https",
-							"host": [
-								"ess",
-								"test",
-								"ess",
-								"tencent",
-								"cn"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "模板发起",
-			"item": [
-				{
 					"name": "CreateFlow",
 					"event": [
 						{
@@ -252,7 +447,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n\n \n  \"FlowName\": \"我的第一个合同\",\n  \"Unordered\": false,\n  \"FlowType\": \"other\",\n  \"Approvers\": [\n    {\n      \"ApproverType\": 1,\n      \"Required\": true,\n      \"ApproverName\": \"张三\",\n      \"ApproverMobile\": \"18111222333\"\n    }\n  ]\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"FlowName\": \"我的第一个合同\",\n  \"Unordered\": false,\n  \"FlowType\": \"other\",\n  \"Approvers\": [\n    {\n      \"ApproverType\": 1,\n      \"Required\": true,\n      \"ApproverName\": \"张三\",\n      \"ApproverMobile\": \"18111222333\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -317,7 +512,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n\n  \"FileNames\": [\n    \"我的第一个合同\"\n  ],\n  \"FlowId\": \"yDw9jUUgyg34ghj0UxawbT61cKbyWFzw\",\n  \"TemplateId\": \"{{TemplateId}}\",\n  \"FormFields\": []\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n\n  \"FileNames\": [\n    \"我的第一个合同\"\n  ],\n  \"FlowId\": \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\",\n  \"TemplateId\": \"{{TemplateId}}\",\n  \"FormFields\": []\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -382,7 +577,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"FlowId\": \"yDw9jUUgyg34ghj0UxawbT61cKbyWFzw\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"FlowId\": \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -404,72 +599,7 @@
 					"response": []
 				},
 				{
-					"name": "DescribeFlowBriefs",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-TC-Action",
-								"value": "DescribeFlowBriefs",
-								"type": "text"
-							},
-							{
-								"key": "X-TC-Version",
-								"value": "2020-11-11",
-								"type": "text"
-							},
-							{
-								"key": "X-TC-Timestamp",
-								"value": "{{Timestamp}}",
-								"type": "text"
-							},
-							{
-								"key": "X-TC-Region",
-								"value": "ap-guangzhou",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDw9jUUgyg34ghj0UxawbT61cKbyWFzw\"\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://ess.test.ess.tencent.cn",
-							"protocol": "https",
-							"host": [
-								"ess",
-								"test",
-								"ess",
-								"tencent",
-								"cn"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DescribeFileUrls",
+					"name": "CreatePrepareFlow",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -487,7 +617,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "DescribeFileUrls"
+								"value": "CreatePrepareFlow"
 							},
 							{
 								"key": "X-TC-Version",
@@ -512,7 +642,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"BusinessIds\": [\"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\"],\n    \"BusinessType\": \"FLOW\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"ResourceId\": \"yDw9jUUgyg3ucjyfUyLPc4iE5BZOhMGT\",\n  \"FlowName\": \"测试合同\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -532,12 +662,7 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "签署",
-			"item": [
+				},
 				{
 					"name": "CreateSchemeUrl",
 					"event": [
@@ -582,7 +707,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"PathType\": 1\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwXiUUckp1ivacqUxErSZ0uIW72Qaxm\",\n    \"PathType\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -647,7 +772,342 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\",\n        \"ClientIp\":\"8.8.8.8\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverMobile\": \"xx\",\n            \"ApproverName\": \"xx\",\n            \"ApproverType\": 1\n        }\n    ]\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwXiUUckp1ivacqUxErSZ0uIW72Qaxm\",\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverMobile\": \"18111222333\",\n            \"ApproverName\": \"张三\",\n            \"ApproverType\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateMultiFlowSignQRCode",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateMultiFlowSignQRCode"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"TemplateId\": \"{{TemplateId}}\",\n    \"FlowName\": \"扫码签流程\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "查询签署流程相关接口",
+			"item": [
+				{
+					"name": "DescribeFlowBriefs",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"value": "DescribeFlowBriefs",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Version",
+								"value": "2020-11-11",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"value": "{{Timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TC-Region",
+								"value": "ap-guangzhou",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFlowInfo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFlowInfo"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\",\n        \"yDwXiUUckp1ivacqUxErSZ0uIW72Qaxm\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DescribeFlowComponents",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeFlowComponents"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwXiUUckp1ivacqUxErSZ0uIW72Qaxm\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "控制签署流程相关接口",
+			"item": [
+				{
+					"name": "CreateFlowSignReview",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateFlowSignReview"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwXiUUckp1ivacqUxErSZ0uIW72Qaxm\",\n    \"ReviewType\":\"PASS\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -712,7 +1172,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"Approvers\": [\n    {\n      \"RecipientId\": \"RecipientId_1\",\n      \"ApproverSource\": \"WEWORKAPP\",\n     \"CustomUserId\": \"Zhangsan\"\n      \n    }\n  ]\n\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwhLUUckp16ryi2URx5tRNwntn9gYVA\",\n    \"Approvers\": [\n    {\n      \"RecipientId\": \"RecipientId_1\",\n      \"ApproverSource\": \"WEWORKAPP\",\n      \"CustomUserId\": \"Zhangsan\"\n      \n    }\n  ]\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -734,7 +1194,7 @@
 					"response": []
 				},
 				{
-					"name": "CreateFlowSignReview",
+					"name": "CreateReleaseFlow",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -752,7 +1212,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "CreateFlowSignReview"
+								"value": "CreateReleaseFlow"
 							},
 							{
 								"key": "X-TC-Version",
@@ -777,7 +1237,72 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\",\n    \"ReviewType\":\"PASS\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"NeedRelievedFlowId\": \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\",\n    \"ReliveInfo\": {\n        \"Reason\": \"none\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelFlow",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CancelFlow"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\",\n    \"CancelMessage\": \"none\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -842,7 +1367,72 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDw9jUUgyg34g8ifUxawbT6ukC6XZ51N\"\n    ]\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowIds\": [\n        \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelMultiFlowSignQRCode",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CancelMultiFlowSignQRCode"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"QrCodeId\": \"yDwhLUUckp16ry4tURx5tRNNBKFFB2AA\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -886,7 +1476,7 @@
 			]
 		},
 		{
-			"name": "印章管理",
+			"name": "电子印章管理相关接口",
 			"item": [
 				{
 					"name": "DescribeOrganizationSeals",
@@ -952,14 +1542,9 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "模板管理",
-			"item": [
+				},
 				{
-					"name": "DescribeFlowTemplates",
+					"name": "CreateSealPolicy",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -977,7 +1562,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "DescribeFlowTemplates"
+								"value": "CreateSealPolicy"
 							},
 							{
 								"key": "X-TC-Version",
@@ -1002,7 +1587,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"template-id\",\n            \"Values\": [\"{{TemplateId}}\"]\n        }\n    ]\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"SealId\": \"yDR0AUUgygqf6u4oUuO4zjEElLo6cyFm\",\n    \"UserIds\": [\"{{OperatorUserId}}\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1022,38 +1607,9 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "个人账号管理",
-			"item": [],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
 				},
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "企业管理",
-			"item": [
-				{
-					"name": "DescribeIntegrationEmployees",
+					"name": "DeleteSealPolicies",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1071,7 +1627,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "DescribeIntegrationEmployees"
+								"value": "DeleteSealPolicies"
 							},
 							{
 								"key": "X-TC-Version",
@@ -1096,7 +1652,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Limit\": 2\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"SealId\": \"yDR0AUUgygqf6u4oUuO4zjEElLo6cyFm\",\n    \"UserIds\": [\"{{OperatorUserId}}\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1117,31 +1673,76 @@
 					},
 					"response": []
 				}
-			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
 			]
 		},
 		{
-			"name": "证书管理",
+			"name": "证书管理相关接口",
 			"item": [
+				{
+					"name": "VerifyPdf",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "VerifyPdf"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "CreateFlowEvidenceReport",
 					"event": [
@@ -1186,7 +1787,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDwhLUUckp1626faURx5tRNuqkNyPDRg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1295,10 +1896,10 @@
 			]
 		},
 		{
-			"name": "电子文档管理",
+			"name": "机构与员工相关接口",
 			"item": [
 				{
-					"name": "CreateMultiFlowSignQRCode",
+					"name": "DescribeIntegrationEmployees",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1316,7 +1917,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "CreateMultiFlowSignQRCode"
+								"value": "DescribeIntegrationEmployees"
 							},
 							{
 								"key": "X-TC-Version",
@@ -1341,7 +1942,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"TemplateId\": \"{{TemplateId}}\",\n    \"FlowName\": \"扫码签流程\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Limit\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1363,7 +1964,7 @@
 					"response": []
 				},
 				{
-					"name": "CancelMultiFlowSignQRCode",
+					"name": "CreateIntegrationEmployees",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1381,7 +1982,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "CancelMultiFlowSignQRCode"
+								"value": "CreateIntegrationEmployees"
 							},
 							{
 								"key": "X-TC-Version",
@@ -1406,7 +2007,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"QrCodeId\": \"yDw9kUUgyg341rl5UyLm3ikCvew6diBL\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Employees\": [\n        {\n            \"Mobile\": \"\",\n            \"DisplayName\": \"张三\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1428,7 +2029,7 @@
 					"response": []
 				},
 				{
-					"name": "VerifyPdf",
+					"name": "UpdateIntegrationEmployees",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1446,7 +2047,7 @@
 							{
 								"key": "X-TC-Action",
 								"type": "text",
-								"value": "VerifyPdf"
+								"value": "UpdateIntegrationEmployees"
 							},
 							{
 								"key": "X-TC-Version",
@@ -1471,7 +2072,422 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"FlowId\": \"yDRIKUUgyxxxxUuO4zjExhs82XeuX\"\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Employees\": [\n        {\n            \"UserId\":\"{{OperatorUserId}}\",\n            \"Mobile\": \"\",\n            \"DisplayName\": \"张三\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteIntegrationEmployees",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DeleteIntegrationEmployees"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Employees\": [\n        {\n            \"UserId\":\"{{OperatorUserId}}\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BindEmployeeUserIdWithClientOpenId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "BindEmployeeUserIdWithClientOpenId"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"UserId\": \"{{OperatorUserId}}\",\n    \"OpenId\": \"SystemManagerOpenId\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnbindEmployeeUserIdWithClientOpenId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "UnbindEmployeeUserIdWithClientOpenId"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"UserId\": \"{{OperatorUserId}}\",\n    \"OpenId\": \"SystemManagerOpenId\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "角色管理相关接口",
+			"item": [
+				{
+					"name": "DescribeIntegrationRoles",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DescribeIntegrationRoles"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Limit\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateIntegrationUserRoles",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "CreateIntegrationUserRoles"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"UserIds\": [\"{{OperatorUserId}}\"],\n    \"RoleIds\": [\"yDxALUyKQDAW9mUuO4zjEujcaAojlXt4\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ess.test.ess.tencent.cn",
+							"protocol": "https",
+							"host": [
+								"ess",
+								"test",
+								"ess",
+								"tencent",
+								"cn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteIntegrationRoleUsers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TC-Action",
+								"type": "text",
+								"value": "DeleteIntegrationRoleUsers"
+							},
+							{
+								"key": "X-TC-Version",
+								"type": "text",
+								"value": "2020-11-11"
+							},
+							{
+								"key": "X-TC-Timestamp",
+								"type": "text",
+								"value": "{{Timestamp}}"
+							},
+							{
+								"key": "X-TC-Region",
+								"type": "text",
+								"value": "ap-guangzhou"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n    \"Users\": [\n        {\"UserId\": \"{{OperatorUserId}}\"}\n    ],\n    \"RoleId\": \"yDxALUyKQDAW9mUuO4zjEujcaAojlXt4\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
