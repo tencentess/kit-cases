@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "帐号管理相关接口",
+			"name": "账号管理相关接口",
 			"item": [
 				{
 					"name": "CreateConsoleLoginUrl",
