@@ -447,7 +447,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"FlowName\": \"我的第一个合同\",\n  \"Unordered\": false,\n  \"FlowType\": \"other\",\n  \"Approvers\": [\n    {\n      \"ApproverType\": 1,\n      \"Required\": true,\n      \"ApproverName\": \"张三\",\n      \"ApproverMobile\": \"18111222333\"\n    }\n  ]\n}",
+							"raw": "{\n    \"Operator\": {\n        \"UserId\": \"{{OperatorUserId}}\"\n    },\n  \"FlowName\": \"我的第一个合同\",\n  \"Unordered\": true,\n  \"FlowType\": \"other\",\n  \"Approvers\": [\n    {\n      \"ApproverType\": 1,\n      \"Required\": true,\n      \"ApproverName\": \"张三\",\n      \"ApproverMobile\": \"18111222333\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
