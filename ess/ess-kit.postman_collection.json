@@ -2555,6 +2555,8 @@
 					"    CanonicalQueryString = \"\"",
 					"}",
 					"",
+					"const {Property} = require('postman-collection')",
+					"payload=Property.replaceSubstitutions(payload, pm.variables.toObject())",
 					"var reg = /^http(s)?:\\/\\/(.*?)\\//",
 					"HashedRequestPayload = CryptoJS.SHA256(payload).toString(CryptoJS.enc.Hex);",
 					"CanonicalURI = \"/\";",
